@@ -1,0 +1,13 @@
+Search and filter products
+
+View product details
+
+Add/remove products to cart
+
+Complete checkout process
+
+----  At least 3 array methods (filter, map, reduce, etc.) --- 
+
+Event Listeners
+
+Form Validation using JavaScript

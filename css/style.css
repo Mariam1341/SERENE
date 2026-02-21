@@ -51,6 +51,10 @@ body {
     color: #fff !important;
 }
 
+.btn-hover-product:hover {
+    color: #ffffffaf  !important;
+}
+
 .logo-row {
   display: block;
   width: 100%;

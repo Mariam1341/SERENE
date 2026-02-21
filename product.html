@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  
+   
     <link rel="stylesheet" href="css/style.css" />
     
     <link
@@ -19,10 +19,9 @@
       crossorigin="anonymous"
     ></script>
     
-  
 </head>
 <body>
-     <nav
+   <nav
       class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-3"
     >
       <div class="container-fluid px-lg-5 position-relative">
@@ -75,31 +74,25 @@
         </div>
       </div>
     </nav>
-
   <main>
-
+    <section>
+      <div class="container " id="single-product">
     
-      <section>
-        <div class="container py-5 text-center">
-          <h2 class="fw-bold mb-5" style="letter-spacing: 2px">
-            ALL PRODUCTS
-          </h2>
-        
-
-          <div id="all-products" class="row justify-content-center g-4">
-            <div class="text-center py-5">
-    <div class="spinner-border" style="color: #ec238b;" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-          </div> 
-
-        </div>
-      </section>
+      </div>
+    </section>
   </main>
-  <script src="js/products.js"></script>
+   <script src="js/products.js"></script>
   <script>
-    initAllProductsPage();
+   initProductPage();
+   
+   function changeQty(amount) {
+    const qtySpan = document.getElementById('product-qty');
+    let currentQty = parseInt(qtySpan.innerText);
+    
+    if (currentQty + amount >= 1) {
+        qtySpan.innerText = currentQty + amount;
+    }
+}
   </script>
 </body>
 </html>
