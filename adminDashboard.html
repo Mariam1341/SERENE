@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootcss/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="bootcss/bootstrap.min.css"/>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main style="background-color: #fcfcfc; min-height: 100vh">
+      <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+        
+            <h2 class="fw-bold" style="letter-spacing: 1px">
+              Admin <span class="fw-light text-muted">| Dashboard</span>
+            </h2>
+            
+         
+          <button class="btn btn-outline-dark px-4">Logout</button>
+        </div>
+
+        <div class="card border-0 rounded-0 shadow-sm mb-5">
+          <div class="card-body p-4">
+            <h5
+              class="fw-bold mb-4"
+              style="              
+                border-left: 4px solid #ec238b;
+                padding-left: 15px;
+              "
+            >
+              ADD NEW PRODUCT
+            </h5>
+
+            <form id="productForm" class="row g-3">
+              <input type="hidden" id="productId" value="">
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Product Name"
+                  required
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="number"
+                  id="price"
+                  class="form-control"
+                  placeholder="Price (EGP)"
+                  required
+                />
+              </div>
+              <div class="col-3">
+                <select id="category" class="form-select">
+                  <option value="">Category</option>
+                  <option value="face">Face</option>             
+                  <option value="hair">Hair</option>
+                  <option value="body">Body</option>
+                  <option value="lips">Lips</option>
+                </select>
+              </div>
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="brand"
+                  class="form-control "
+                  placeholder="Brand Name"
+                />
+              </div>
+
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="short_description"
+                  class="form-control"
+                  placeholder="Short Description"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="description"
+                  class="form-control"
+                  placeholder="Full Description"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="main_img"
+                  class="form-control"
+                  placeholder="Main Image URL"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="text"
+                  id="hover_img"
+                  class="form-control"
+                  placeholder="Hover Image URL"
+                />
+              </div>
+
+              <div class="col-12 text-end mt-4">
+                <button
+                  type="button"
+                  onclick="AddOrEditProduct(this, event)"
+                  class="btn text-white px-5 rounded-0 fw-bold"
+                  style="background-color: #ec238b; height: 50px"
+                >
+                  ADD PRODUCT
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm rounded-0">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 class="fw-bold mb-0">PRODUCT INVENTORY</h5>
+                <input
+                  type="text"
+                  id="searchProduct"
+                  class="form-control form-control-sm rounded-0"
+                  placeholder="Search by name..."
+                  onkeyup="searchProduct()"
+                  style="width: 300px"
+                />
+
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle custom-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>Category</th>  
+                    <th>Price</th>                                      
+                    <th>Brand</th>
+          
+
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+<script src="js/admin.js"></script>
+  </body>
+</html>

@@ -45,39 +45,92 @@ async function getBestSellersProducts() {
   }
 }
 
+// }
+// async function productsPage() {
+//     const params = new URLSearchParams(window.location.search);
+//     const category =  params.get('cat');
+//     // let header = ;
+//     category? document.getElementById("products-header").innerText = category.toUpperCase():
+//     document.getElementById("products-header").innerText = "ALL PRODUCTS";
 
-async function addOrEditProduct(product, id) {
-  try {
-    if (id) {
-      await fetch(API_URL, {
-        method: "POST",
-        headers,
-        body: JSON.stringify(product),
-      });
+//     let products = await getAllProducts();
+
+//     let filteredProducts = [];
+    
+//   if (category) {
+//       filteredProducts = products.filter(p => p.category.toLowerCase() === category.toLowerCase());  
+//       showProducts(filteredProducts, "all-products");
+//   }else{
+//     showProducts(products, "all-products");
+//   }
+
+// }
+
+
+  async function productsPage() {
+    let params = new URLSearchParams(window.location.search);
+    let categoryFromUrl = params.get('cat');
+    
+    let header = document.getElementById("products-header");
+    if (categoryFromUrl) {
+        header.innerText = categoryFromUrl.toUpperCase();
     } else {
-       await fetch(`${API_URL}?id=eq.${id}`, {
-        method: "PATCH",
-        headers,
-        body: JSON.stringify(product),
-      });
+        header.innerText = "ALL PRODUCTS";
     }
-  } catch (error) {
-    console.log("Error in addOrEditProduct:", error);
-  }
+
+    let allProducts = await getAllProducts();
+    
+function Filtering() {
+        let searchInput = document.getElementById("products-search").value.toLowerCase();
+        let categorySelect = document.getElementById("catigories-filter").value;
+        let priceSort = document.getElementById("products-sort").value;
+
+        let filteredList = allProducts.filter(function(p) {
+            let categoryToMatch;
+            if (categorySelect === "all") {
+                categoryToMatch = categoryFromUrl || "all";
+            } else {
+                categoryToMatch = categorySelect;
+            }
+
+            let matchCat = (categoryToMatch === "all" || p.category.toLowerCase() === categoryToMatch.toLowerCase());
+            let matchSearch = p.name.toLowerCase().includes(searchInput);
+            
+            return matchCat && matchSearch;
+        });
+
+        if (priceSort === "low") {
+            filteredList.sort(function(a, b) { return a.price - b.price; });
+        } else if (priceSort === "high") {
+            filteredList.sort(function(a, b) { return b.price - a.price; });
+        }
+
+        showProducts(filteredList, "all-products");
+        
+        let countText = document.querySelector(".results-count");
+        if (countText) {
+            countText.innerText = "Showing " + filteredList.length + " products";
+        }
+    }
+    
+
+    document.getElementById("apply-btn").onclick = Filtering;
+    document.getElementById("products-search").oninput = Filtering;
+
+    if (categoryFromUrl) {
+        document.getElementById("catigories-filter").value = categoryFromUrl.toLowerCase();
+    }
+
+    Filtering();
+
 }
 
-async function deleteProduct(id) {
-  if (confirm("Are you sure?")) {
-    await fetch(`${API_URL}?id=eq.${id}`, {
-      method: "DELETE",
-      headers,
-    });
-    showProducts();
-  }
-}
 
 function showProducts(products, containerId) {
+  
   const container = document.getElementById(containerId);
+
+  
   const bestSellerHTML =` <span class="badge position-absolute top-0 start-0 m-2 px-3 py-2"
                       style="background-color: #1a5d1a; font-size: 0.7rem; border-radius: 0; z-index: 2;">
                       BEST SELLER
@@ -86,13 +139,14 @@ function showProducts(products, containerId) {
 
   let productsHTML = products.map(p=>{
     p.is_best_seller? bestSellerBadge = bestSellerHTML : bestSellerBadge = "";
+    isSameImage = p.hover_image ? "" : "zoom-effect";
     return `
             <div class="col-6 col-md-4 col-lg-3" >
             <a href="/product.html?id=${p.id}">
-              <div class="card border-0 h-100 position-relative">
+              <div class="card border-0 h-100 position-relative " >
                
                 ${bestSellerBadge}
-                <div class="bg-light mb-3 img-container" style="text-doceration:none;">
+                <div class="bg-light mb-3 img-container ${isSameImage}" style="text-doceration:none; ">
                   <img src="${p.main_image}" class="img-fluid main-img" style="object-fit: cover" alt="${p.name}" />
                   <img src="${p.hover_image || p.main_image}" class="hover-img" alt="${p.name} Back">
                 </div>
@@ -243,5 +297,6 @@ async function initProductPage() {
 
     let data = await getSingleProduct(productId);
     //cause fetch return array
-    showSingleProduct(data[0], "single-product")}
+    showSingleProduct(data[0], "single-product");
+}
  

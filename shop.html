@@ -6,7 +6,7 @@
   <title>Document</title>
   
     <link rel="stylesheet" href="css/style.css" />
-    
+    <link rel="stylesheet" href="bootcss/bootstrap.min.css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,7 +18,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
 </head>
 <body>
@@ -41,7 +41,7 @@
                 <a class="nav-link text-dark px-2" href="home.html">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark px-2" href="allProducts.html">SHOP ALL</a>
+                <a class="nav-link text-dark px-2" href="shop.html">SHOP ALL</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-dark px-2" href="#">ABOUT US</a>
@@ -81,10 +81,62 @@
     
       <section>
         <div class="container py-5 text-center">
-          <h2 class="fw-bold mb-5" style="letter-spacing: 2px">
-            ALL PRODUCTS
+          <h2 class="fw-bold mb-5" style="letter-spacing: 2px" id="products-header">
+            
           </h2>
+  <div class="container my-5">
+
+    <!-- this is from chatgpt i try my best to think how to get it but i can't
         
+        note I speek about filterArea only and the way it collapse
+        but the rest of the code from search sort by and category it's by me 
+    
+    -->
+
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3">
+    <button class="btn d-flex align-items-center gap-2 border px-4 py-2" 
+            type="button" data-bs-toggle="collapse" data-bs-target="#filterArea">
+      <i class="bi bi-funnel"></i> FILTER & SEARCH
+    </button>
+  </div>
+
+  <div class="collapse mt-3" id="filterArea">
+    <div class="card card-body bg-light p-4">
+      <div class="row g-4">
+        
+        <div class="col-4">
+          <label class="fw-bold small mb-2">SEARCH</label>
+          <input type="text" id="products-search" class="form-control" placeholder="What are you looking for?">
+        </div>
+
+        <div class="col-md-3">
+          <label class="fw-bold small mb-2">CATEGORY</label>
+          <select id="catigories-filter" class="form-select border-bottom ">
+            <option value="all">All Categories</option>
+            <option value="face">Face Care</option>
+            <option value="hair">Hair Care</option>
+            <option value="body">Body Care</option>
+            <option value="lip">Lip Care</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="fw-bold small mb-2">SORT BY</label>
+          <select id="products-sort" class="form-select border-bottom ">
+            <option value="default">Default Sorting</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <button id="apply-btn" class="btn w-100 fw-bold text-white py-2" style="background-color: #ec238b;">APPLY</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
           <div id="all-products" class="row justify-content-center g-4">
             <div class="text-center py-5">
@@ -97,9 +149,11 @@
         </div>
       </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   <script src="js/products.js"></script>
   <script>
-    initAllProductsPage();
+    productsPage();
   </script>
 </body>
 </html>
