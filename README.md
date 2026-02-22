@@ -2,7 +2,7 @@
 
 This is our final group project. It is an E-commerce website for a beauty and skincare brands called "SERENE" We focused on making the design clean, elegant, and very easy for the user to navigate.
 
-## 🚀 Main Features
+## Main Features
 
 * **Home Page:** Introduction to the brand with featured categories and best-selling products.
 * **Shop Page:** A full catalog where users can:
@@ -15,7 +15,7 @@ This is our final group project. It is an E-commerce website for a beauty and sk
     * **Delete** products from the inventory.
 * **Shopping Cart:** Users can add products to their cart and see the total price.
 
-## 🛠 Tools & Technologies
+## Tools & Technologies
 
 * **HTML5:** To build the structure of all pages.
 * **CSS:** For custom styling and colors.
@@ -23,7 +23,7 @@ This is our final group project. It is an E-commerce website for a beauty and sk
 * **Vanilla JavaScript:** We used JS to handle all the logic like filtering, searching, and managing the Admin Dashboard.
 * **Fetch API:** To connect our website to the server to get and update product data.
 
-## 📂 Project Structure
+## Project Structure
 
 * `index.html` - The main landing page.
 * `shop.html` - The product listing and filtering page.
