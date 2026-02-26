@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERENE</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+</head>
+
+<body style="background:#f8f9fa;">
+
+  <main class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold m-0">Checkout</h2>
+        <a href="shop.html" class="text-decoration-none" style="color:#ec238b;">continue shopping</a>
+      </div>
+
+      <div class="row g-4">
+
+       
+        <div class="col-12 col-lg-7">
+          <div class="bg-white border rounded-4 p-4">
+            <h5 class="fw-bold mb-3">Shipping Details</h5>
+
+            <form id="checkoutForm" class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Full Name</label>
+                <input id="fullName" class="form-control" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Phone</label>
+                <input id="phone" class="form-control" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Address</label>
+                <input id="address" class="form-control" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">City</label>
+                <input id="city" class="form-control" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Payment</label>
+                <select id="paymentMethod" class="form-select">
+                  <option value="cod">Cash on Delivery</option>
+                  <option value="card" disabled>Card (later)</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Notes (optional)</label>
+                <textarea id="notes" class="form-control" rows="3"></textarea>
+              </div>
+
+              <div class="col-12">
+                <div id="formError" class="text-danger small"></div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn text-white w-100 py-2" style="background:#ec238b;" type="submit">
+                  Place Order
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+       
+        <div class="col-12 col-lg-5">
+          <div class="bg-white border rounded-4 p-4">
+            <h5 class="fw-bold mb-3">Order Summary</h5>
+
+            <ul id="cartList" class="list-unstyled mb-3"></ul>
+
+            <div id="emptyCart" class="text-center py-4 d-none">
+              <div class="mb-2" style="font-size:40px;opacity:.45;">🛒</div>
+              <p class="text-muted mb-0">Your cart is empty.</p>
+            </div>
+
+            <div class="border-top pt-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Subtotal</span>
+                <span class="fw-bold" id="subtotal">0 EGP</span>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Shipping</span>
+                <span class="fw-bold" id="shipping">70 EGP</span>
+              </div>
+
+              <div class="d-flex justify-content-between fs-5">
+                <span class="fw-bold">Total</span>
+                <span class="fw-bold" id="total">0 EGP</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  
+  <template id="cartItemlist">
+    <li class="cart-item d-flex gap-3 align-items-start border-bottom pb-3 mb-3">
+      <img class="cart-item-image rounded" style="width:64px;height:64px;object-fit:cover;" />
+
+      <div class="flex-grow-1">
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="cart-item-name fw-semibold"></div>
+            <div class="cart-item-price text-muted small"></div>
+          </div>
+
+          <button class="cart-item-remove btn btn-link p-0 small"
+                  style="color:#ec238b;text-decoration:none;">
+            Remove
+          </button>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <div class="cart-item-controls btn-group btn-group-sm" role="group">
+            <button class="cart-item-btn cart-item-dec btn btn-outline-secondary">-</button>
+            <span class="cart-item-qty px-3 d-flex align-items-center"></span>
+            <button class="cart-item-btn cart-item-inc btn btn-outline-secondary">+</button>
+          </div>
+
+          <div class="cart-item-total fw-semibold"></div>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="js/products.js"></script>
+
+  <script src="js/cart.js"></script>
+
+</body>
+</html>
