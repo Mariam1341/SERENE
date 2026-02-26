@@ -21,8 +21,6 @@ async function getAllProducts() {
   }
 }
 
-
-
 async function getProducts() {
   try {
     const res = await fetch(API_URL, { headers });
@@ -30,7 +28,6 @@ async function getProducts() {
 
     const table = document.getElementById("productsTable");
 
- 
     const tableHTML = data.map((product) => {
       return `
         <tr>
@@ -63,7 +60,7 @@ async function getProducts() {
   }
 }
 
-async function AddOrEditProduct(this, e) {
+async function AddOrEditProduct(form, e) {
   e.preventDefault();
 
   const id = document.getElementById("productId").value;
@@ -92,7 +89,7 @@ async function AddOrEditProduct(this, e) {
       });
     }
 
-    this.reset();
+    form.reset();
     document.getElementById("productId").value = "";
     getProducts();
     alert(id ? "Product updated successfully!" : "Product added successfully!");
@@ -121,8 +118,7 @@ async function editProduct(id) {
   document.getElementById("brand").value = product.brand;
   document.getElementById("short_description").value =
     product.short_description;
-    document.getElementById("description").value =
-    product.description;
+  document.getElementById("description").value = product.description;
   document.getElementById("main_img").value = product.main_image;
   document.getElementById("hover_img").value = product.hover_image;
 }
@@ -134,7 +130,7 @@ async function deleteProduct(id) {
         method: "DELETE",
         headers,
       });
-      getProducts(); 
+      getProducts();
     } catch (error) {
       console.log("Error deleting product:", error);
     }

@@ -8,7 +8,7 @@ const headers = {
   "Content-Type": "application/json",
 };
 //added to store in it products for cart
-let ProductsCart = [];
+let allProducts = [];
 
 async function getAllProducts() {
   try {
@@ -17,7 +17,7 @@ async function getAllProducts() {
     });
     let data = await result.json();
     //added to store in it products for cart
-    ProductsCart = data;
+    allProducts = data;
     console.log(data);
     return data;
   } catch (error) {
@@ -150,7 +150,7 @@ function showProducts(products, containerId) {
     isSameImage = p.hover_image ? "" : "zoom-effect";
     return `
             <div class="col-6 col-md-4 col-lg-3" >
-            <a href="product.html?id=${p.id}">
+            <a href="/product.html?id=${p.id}">
               <div class="card border-0 h-100 position-relative " >
                
                 ${bestSellerBadge}
@@ -239,11 +239,11 @@ function showSingleProduct(product, containerId) {
 
         <div class="row g-3 mb-4 align-items-center">
         <div class="d-flex align-items-center border" style="width: fit-content;">
-        <button class="btn btn-sm px-3 py-2 border-end" onclick="changeQty(-1)">-</button>
+        <button class="btn btn-sm px-3 py-2 border-end" onclick="changeQty(-1, ${product.id})">-</button>
 
         <span id="product-qty" class="px-4 fw-bold">1</span>
 
-        <button class="btn btn-sm px-3 py-2 border-start" onclick="changeQty(1)">+</button>
+        <button class="btn btn-sm px-3 py-2 border-start" onclick="changeQty(1, ${product.id})">+</button>
       </div>
           <div class="col-9">
             <button onclick="addToCart(${product.id})" class="btn btn-hover-product w-100 fw-bold py-2 text-white"

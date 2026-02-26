@@ -2,7 +2,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 body {
-  font-family: "Inter", sans-serif; 
+  font-family: "Inter", sans-serif;
   background-color: #fff;
 }
 
@@ -18,74 +18,72 @@ body {
 }
 
 .img-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background-color: #f8f9fa;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #f8f9fa;
 }
 /* تحديد عرض القائمة الجانبية */
 .offcanvas {
-    width: 350px !important; /* تقدري تتحكمي في العرض من هنا */
+  width: 350px !important; /* تقدري تتحكمي في العرض من هنا */
 }
 
 /* حركة تنعيم الظل اللي بيظهر ورا القائمة */
 .offcanvas-backdrop.show {
-    opacity: 0.3;
+  opacity: 0.3;
 }
 /* تغيير لون الـ Checkbox للبينك */
 .form-check-input:checked {
-    background-color: #ec238b;
-    border-color: #ec238b;
+  background-color: #ec238b;
+  border-color: #ec238b;
 }
 
 /* عرض القائمة الجانبية */
 .offcanvas {
-    width: 320px !important; /* نفس عرض المواقع الاحترافية */
+  width: 320px !important; /* نفس عرض المواقع الاحترافية */
 }
 
 /* ستايل العناوين الفرعية جوه الفلتر */
 .offcanvas-body h6 {
-    letter-spacing: 1px;
-    font-size: 0.75rem;
-    color: #333;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: #333;
 }
 .main-img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hover-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 .img-container:hover .hover-img {
-    opacity: 1;
-    
+  opacity: 1;
 }
 
 .zoom-effect:hover .hover-img {
-    opacity: 1;
-    transform: scale(1.15);
-    transition: transform 0.5s ease;
+  opacity: 1;
+  transform: scale(1.15);
+  transition: transform 0.5s ease;
 }
 .btn-hover:hover {
-   
-    background-color: #ec238b; 
-    border-color: #ec238b;     
-    color: #fff !important;
+  background-color: #ec238b !important;
+  border-color: #ec238b !important;
+  color: #fff !important;
 }
 
 .btn-hover-product:hover {
-    color: #ffffffaf  !important;
+  color: #ffffffaf !important;
 }
 
 .logo-row {
@@ -93,19 +91,15 @@ body {
   width: 100%;
 }
 
-
 .navbar-nav .nav-link {
   color: #333 !important;
-border-bottom: 2px solid transparent;
-
+  border-bottom: 2px solid transparent;
 }
-
 
 .navbar-nav .nav-link:hover {
   color: #ec238b !important;
   border-bottom: 2px solid #ec238b;
 }
-
 
 .badge-count {
   position: absolute;
@@ -119,72 +113,401 @@ border-bottom: 2px solid transparent;
   font-weight: bold;
 }
 
-
 .navbar-icons i {
   font-size: 1.3rem;
 }
 
 .carousel-img {
-    width: 100%;
-   height: 90vh;
-    object-fit: contain; 
-    background-color: #F3D9D9;}
-
-
-.category-item {
-    overflow: hidden;
+  width: 100%;
+  height: 90vh;
+  object-fit: contain;
+  background-color: #f3d9d9;
 }
 
+.category-item {
+  overflow: hidden;
+}
 
 .category-img-wrapper {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
 }
 
 .category-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transition: transform 0.6s ;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
 }
 
-
 .category-item:hover .category-img-wrapper img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* حاوية الزرار */
 .category-btn-container {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    z-index: 10;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  z-index: 10;
 }
-
 
 .btn-category {
-    display: block;
-    background-color: #ec238b; 
-    color: white;
-    text-align: center;
-    padding: 12px 0;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: none;
-    text-transform: uppercase;
+  display: block;
+  background-color: #ec238b;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
 }
 
- 
+/* I ask chatGPT to make an ordinaty hover effect
+  // He made this one and I liked it so I kept it */
+
 .btn-category:hover {
-    color: white;
-    letter-spacing: 4px;
- // I ask chatGPT to make an ordinaty hover effect
-  // He made this one and I liked it so I kept it 
+  color: white;
+  letter-spacing: 4px;
 }
 
+
+
+
+/*About us page */
+
+.background {
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.background .background-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f3d9d9;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0 16 px;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+  width: 74px;
+  height: 74px;
+  border: 2px solid #ec238b;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ec238b;
+  margin: 0 auto;
+}
+.feature-icon i {
+  font-size: 34px;
+}
+.social i {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+
+/*footer page*/
+.footer {
+  background: #bfe9f6;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.brand-name {
+  color: #e91e8b;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.footer-title {
+  color: #111;
+  font-weight: 700;
+}
+
+.footer-text {
+  color: #374151;
+  line-height: 1.7;
+}
+
+.footer-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-link:hover {
+  color: #e91e8b;
+  text-decoration: underline;
+}
+
+.contact-link {
+  color: #e91e8b;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(233, 30, 139, 0.35);
+  padding-bottom: 2px;
+}
+.contact-link:hover {
+  border-bottom-color: #e91e8b;
+}
+
+.footer-line {
+  border-color: rgba(17, 17, 17, 0.25);
+}
+
+
+/*cart*/
+.cart-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  align-items: flex-start;
+}
+
+.cart-item-image {
+  width: 72px;
+  height: 72px;
+  background: #f5f5f5;
+  object-fit: cover;
+  flex: 0 0 72px;
+}
+
+.cart-item-content {
+  flex: 1;
+}
+
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cart-item-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.cart-item-price {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.cart-item-remove {
+  border: 0;
+  background: transparent;
+  color: #6c757d;
+  padding: 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.cart-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item-btn {
+  width: 34px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cart-item-qty {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-item-total {
+  font-weight: 700;
+}
+
+
+
+/* checkout*/
+
+.bg-serene {
+  background: #bfe9f6;
+}
+
+.topbar {
+  height: 85px;
+  background: #aeeeff;
+}
+
+.logo {
+  color: var(--pink);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.cart-btn {
+  position: relative;
+  border: 0;
+  background: rgba(255, 255, 255, 0.6);
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 20px;
+}
+
+.badge-count {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #e91e8b;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 3px 7px;
+  font-weight: 700;
+}
+
+.card-soft {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.input-soft {
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.btn-pink {
+  background: #e91e8b;
+  color: #fff;
+  border: 0;
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+.btn-pink:hover {
+  filter: brightness(0.95);
+  color: #fff;
+}
+
+.summary {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+}
+
+/* checkout items */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item img {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+/* Contact form */
+
+contact {
+  width: 420px;
+  margin: 60px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ec238b;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact label {
+  font-size: 14px;
+  color: #333;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #ec238b;
+}
+
+.contact textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact button {
+  background: #ec238b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.contact button:hover {
+  background: #ec238b;
+}
